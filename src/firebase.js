@@ -7,12 +7,12 @@ import 'firebase/compat/firestore';
 
 
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyAgx_zoimOD05211pwnP3vVRd8pwcFzAh4",
+  authDomain: "social-media-react-53e70.firebaseapp.com",
+  projectId: "social-media-react-53e70",
+  storageBucket: "social-media-react-53e70.appspot.com",
+  messagingSenderId: "667514708052",
+  appId: "1:667514708052:web:c76bb7f11b059ee4cb8dc1"
 };
 
 
