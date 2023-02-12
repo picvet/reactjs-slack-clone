@@ -7,12 +7,12 @@ import 'firebase/compat/firestore';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAgx_zoimOD05211pwnP3vVRd8pwcFzAh4",
-  authDomain: "social-media-react-53e70.firebaseapp.com",
-  projectId: "social-media-react-53e70",
-  storageBucket: "social-media-react-53e70.appspot.com",
-  messagingSenderId: "667514708052",
-  appId: "1:667514708052:web:c76bb7f11b059ee4cb8dc1"
+  apiKey: "AIzaSyBElWUDf1yljOdLKf1fwHiapixSuySkKMU",
+  authDomain: "slack-clone-react-2c410.firebaseapp.com",
+  projectId: "slack-clone-react-2c410",
+  storageBucket: "slack-clone-react-2c410.appspot.com",
+  messagingSenderId: "863569875677",
+  appId: "1:863569875677:web:194b4e183dbc66884f0134"
 };
 
 
