@@ -7,29 +7,34 @@ import { useCollection, useDocument } from 'react-firebase-hooks/firestore';
 import { collection , doc, orderBy, query } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import Message from './Message';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
 
 
 function Chat() {   
 
-    const chatRef = useRef(null);
+    let makeMess;
+
+    const chatRef = useRef(null); 
     
     const roomId = useSelector(selectRoomId);   
 
-    const [roomDetails] = useDocument(
+    const [roomDetails, setRoomDetails] = useDocument(
         roomId && doc(db, `rooms/${roomId.id}`)
       );
  
     
-    const [roomMessages, loading] = useCollection( 
+    const [roomMessages, loading, ] = useCollection(  
         query(roomId && collection(db, `rooms/${roomId.id}/messages`)) 
     );  
 
     useEffect(() => {
         chatRef?.current?.scrollIntoView(
             {behavior: "smooth"}
-        ); 
+        );  
     }, [roomId, loading, roomMessages]);
+
+    
 
   return (
     
@@ -50,9 +55,11 @@ function Chat() {
             </Header>
 
             <ChatMessages className='flex-auto justify-start'>
-                { roomMessages?.docs.map(doc => {
+
+            { roomMessages?.docs.map(doc => { 
                     const { message, timestamp, user, userImage } = doc.data();
 
+                     
                     return (
                         <Message 
                             message={message} 
@@ -62,9 +69,9 @@ function Chat() {
                             userImage = {userImage}
                         />
                     );
-                })}
+            })} 
 
-                <ChatBottom ref={chatRef} />
+            <ChatBottom ref={chatRef} />
             </ChatMessages>
 
             <ChatInput 
